@@ -8,10 +8,7 @@ export interface IUser {
 export interface RegisterUserParams {
     name: string;
     email: string;
-    phoneNumber: number;
-    gender: string;
-    age: number;
-    role: "doctor" | "patient" | "admin";
+    role:  "provider" | "patient";
     password: string;
 }
 

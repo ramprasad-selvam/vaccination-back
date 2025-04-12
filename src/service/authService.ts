@@ -20,10 +20,7 @@ export const userRegister = async (data: RegisterUserParams) => {
         const user = await User.create({
             name: data.name,
             email: data.email.toLowerCase(),
-            phoneNumber: data.phoneNumber,
             password: hashedpassword,
-            age: data.age,
-            gender: data.gender,
             role: data.role
         });
 

@@ -11,9 +11,6 @@ export const loginValidator = [
 export const registrationValidators = [
     body('name')
         .notEmpty().withMessage('Name is required'),
-    body('phoneNumber')
-        .matches(/^[6-9][0-9]{9}$/).withMessage('Phone number is not valid')
-        .notEmpty().withMessage('Phone number is required'),
     body('email')
         .isEmail().withMessage('Invalid email')
         .notEmpty().withMessage('Email is required'),
@@ -24,8 +21,5 @@ export const registrationValidators = [
         .matches(/[0-9]/).withMessage('Password must contain at least one number')
         .matches(/[!@#$%^&*(),.?":{}|<>]/).withMessage('Password must contain at least one special character')
         .notEmpty().withMessage('Password is required'),
-    body('gender')
-        .isIn(['male', 'female', 'others']).withMessage('Select a valid gender')
-        .notEmpty().withMessage('Gender is required')
 ];
 
