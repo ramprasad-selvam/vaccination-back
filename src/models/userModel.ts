@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import { IUser } from "../interfaces/interface";
+import { timeStamp } from "console";
 
 
 // const patientDetails = {
@@ -11,13 +12,10 @@ import { IUser } from "../interfaces/interface";
 const UserSchema: Schema = new Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
-  phoneNumber: { type: Number, required: true },
   password: { type: String, required: true },
-  age: { type: Number},
-  gender: { type: String, enum: ['male', 'female', 'others'], required: true },
   role: {
     type: String,
-    enum: ["user",'doctor', 'patient', 'admin'],
+    enum: ["user",'provider', 'patient',],
     default: 'user',
     required: true,
   },
