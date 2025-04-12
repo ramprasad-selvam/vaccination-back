@@ -9,6 +9,7 @@ const PatientSchema = new Schema({
   contact: { type: String },
   vaccineRecords: [{
     vaccineId: { type: mongoose.Schema.Types.ObjectId, ref: 'Vaccine' },
+    providerId: { type: mongoose.Schema.Types.ObjectId, ref: 'Provider' },
     doseNumber: { type: Number },
     dateAdministered: { type: Date },
     notes: { type: String },
@@ -17,4 +18,4 @@ const PatientSchema = new Schema({
 });
 
 
-const Patient = mongoose.models.Patient || mongoose.model("Patient", PatientSchema);
+export const Patient = mongoose.models.Patient || mongoose.model("Patient", PatientSchema);

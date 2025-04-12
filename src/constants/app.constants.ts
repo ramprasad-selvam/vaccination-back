@@ -11,24 +11,28 @@ export const CUSTOM_CODES = {
     
     PATIENT_SCHEDULED_VACCINE_SUCCESS : {
         code: "PT101",
-        message: "Logged in successfully"
+        message: "Fetch scheduled vaccinations successfully"
     },
 
     PATIENT_SCHEDULED_VACCINE_FAILURE : {
         code: "PT102",
-        message: "Logged in successfully"
+        message: "Failed to fetch scheduled vaccinations"
     },
     
     PATIENT_COMPLETED_VACCINE_SUCCESS : {
         code: "PT201",
-        message: "Logged in successfully"
+        message: "Fetch completed vaccinations successfully"
     },
-
+    
     PATIENT_COMPLETED_VACCINE_FAILURE : {
         code: "PT202",
-        message: "Logged in successfully"
+        message: "Failed to fetch completed vaccinations"
     },
 
+        PATIENT_NOT_FOUND : {
+            code: "PT301",
+            message: "Patient not found"
+        },
     LOGIN_SUCCESS: {
         code: "IN001",
         message: "Logged in successfully"

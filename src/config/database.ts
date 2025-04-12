@@ -1,6 +1,9 @@
 import mongoose from "mongoose"
 import { env_config } from '../config/environment'
 import '../models/userModel'
+import '../models/patientModal'
+import '../models/providerModel'
+import '../models/vaccinationModel'
  
 const connectDB = async (retries = 5, delay = 5000) => {
     while (retries) {
