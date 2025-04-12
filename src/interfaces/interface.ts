@@ -1,11 +1,8 @@
 export interface IUser {
     name: string,
     email: string,
-    gender: string,
-    age: number,
-    phoneNumber: number,
     password: string,
-    role: "doctor" | "patient" | "admin",
+    role: "provider" | "patient"
 }
 
 export interface RegisterUserParams {

@@ -1,20 +1,20 @@
-const mongoose = require("mongoose");
+import mongoose, { Schema } from "mongoose";
 
-const PatientSchema = new mongoose.Schema(
-  {
-    name: { type: String, required: true },
-    age: { type: Number, required: true },
-    gender: { type: String, required: true, enum: ["Male", "Female", "Other"] },
-    assigned_doc: { type: mongoose.Schema.Types.ObjectId, ref: "Provider" },
-    allergies: { type: String, default: "" },
-    currentMedication: { type: String, default: "" },
-    healthTracker: {
-      stepsCount: { type: Number, default: 0 },
-      activeTime: { type: Number, default: 0 }, // in minutes
-      sleepTime: { type: Number, default: 0 },  // in hours
-    },
-  },
-  { timestamps: true }
-);
 
-module.exports = mongoose.model("Patient", PatientSchema);
+const PatientSchema = new Schema({
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  dob: { type: Date },
+  gender: { type: String },
+  address: { type: String },
+  contact: { type: String },
+  vaccineRecords: [{
+    vaccineId: { type: mongoose.Schema.Types.ObjectId, ref: 'Vaccine' },
+    doseNumber: { type: Number },
+    dateAdministered: { type: Date },
+    notes: { type: String },
+    status: { type: String, enum: ['scheduled', 'completed'], required: true }
+  }]
+});
+
+
+const Patient = mongoose.models.Patient || mongoose.model("Patient", PatientSchema);

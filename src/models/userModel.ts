@@ -1,13 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import { IUser } from "../interfaces/interface";
-import { timeStamp } from "console";
 
-
-// const patientDetails = {
-//   vaccinations : [],
-//   allergies : [],
-//   pastVaccinations : 
-// }
 
 const UserSchema: Schema = new Schema({
   name: { type: String, required: true },
@@ -15,8 +8,8 @@ const UserSchema: Schema = new Schema({
   password: { type: String, required: true },
   role: {
     type: String,
-    enum: ["user",'provider', 'patient',],
-    default: 'user',
+    enum: ['provider', 'patient',],
+    default: 'patient',
     required: true,
   },
 

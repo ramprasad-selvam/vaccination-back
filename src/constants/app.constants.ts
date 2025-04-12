@@ -6,17 +6,27 @@ export const appConstants = {
     JWT_EXPIRY: process.env.JWT_EXPIRY as string,
 }
 
+
 export const CUSTOM_CODES = {
-
-
-
-    LOW_STOCK_FETCH_SUCCESS: {
-        code: "LS001",
-        message: "Fetched drugs low in stock"
+    
+    PATIENT_SCHEDULED_VACCINE_SUCCESS : {
+        code: "PT101",
+        message: "Logged in successfully"
     },
-    LOW_STOCK_FETCH_FAILED: {
-        code: "LS002",
-        message: "No drugs found in low stock"
+
+    PATIENT_SCHEDULED_VACCINE_FAILURE : {
+        code: "PT102",
+        message: "Logged in successfully"
+    },
+    
+    PATIENT_COMPLETED_VACCINE_SUCCESS : {
+        code: "PT201",
+        message: "Logged in successfully"
+    },
+
+    PATIENT_COMPLETED_VACCINE_FAILURE : {
+        code: "PT202",
+        message: "Logged in successfully"
     },
 
     LOGIN_SUCCESS: {
